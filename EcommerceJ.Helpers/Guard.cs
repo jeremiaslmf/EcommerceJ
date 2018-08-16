@@ -40,6 +40,11 @@ namespace EcommerceJ.Helpers
                 throw new Exception(propName + " não pode ser negativo!");
         }
 
+        public static bool ForNegative(int number)
+        {
+            return number < 0;
+        }
+
         public static void ForNullOrEmptyDefaultMessage(string value, string propName)
         {
             if (String.IsNullOrEmpty(value))

@@ -7,9 +7,43 @@ namespace EcommerceJ.Helpers.Tests
     public class GuardTests
     {
         [TestMethod]
-        public void Guard_ForValidId_Valid()
+        public void Guard_ForValidId_Ok()
         {
-            Guard.ForValidId()
+            Guard.ForValidId("Guid", 5);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(Exception))]
+        public void Guard_ForValidId_Exception()
+        {
+            Guard.ForValidId(Guid.Empty, "Valor não pode ser vazio.");
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(Exception))]
+        public void Guard_ForValidId_Propriedade_Invalido()
+        {
+            Guard.ForValidId("Guid", 0);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(Exception))]
+        public void Guard_ForValidId_Menor_Que_Zero()
+        {
+            Guard.ForValidId(-5, "Valor deve ser maior que zero.");
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(Exception))]
+        public void Guard_ForNegative_True()
+        {
+            Guard.ForNegative(-1, "Número");
+        }
+
+        [TestMethod]
+        public void Guard_ForNegative_False()
+        {
+            Assert.AreEqual(Guard.ForNegative(1), false);
         }
 
 

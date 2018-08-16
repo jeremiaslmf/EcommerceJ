@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ValueObject\Email.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EcommerceJ.Helpers\EcommerceJ.Helpers.csproj">
@@ -48,8 +49,6 @@
       <Name>EcommerceJ.Helpers</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ValueObject\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
