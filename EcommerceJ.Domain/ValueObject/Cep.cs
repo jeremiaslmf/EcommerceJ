@@ -36,7 +36,7 @@ namespace EcommerceJ.Domain.ValueObject
 
         public string GetCepFormatado()
         {
-            if (CepCod.Equals(null))
+            if (CepCod == null)
                 return string.Empty;
 
             var cep = CepCod.ToString();

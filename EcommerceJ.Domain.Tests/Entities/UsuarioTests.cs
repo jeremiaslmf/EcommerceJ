@@ -1,23 +1,13 @@
-﻿using System;
-using EcommerceJ.Domain.Entities;
+﻿using EcommerceJ.Domain.Entities;
 using EcommerceJ.Domain.ValueObject;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using TutorialEcommerce.Domain.Entities;
-using TutorialEcommerce.Domain.ValueObject;
+using System;
 
 namespace TutorialEcommerce.Domain.Tests.Entities
 {
     [TestClass]
     public class UsuarioTests
     {
-        private Cpf Cpf { get; set; }
-        private Email Email { get; set; }
-        private string Login { get; set; }
-
-        private string Senha { get; set; }
-        private string SenhaConfirmacao { get; set; }
-        private Usuario Usuario { get; set; }
-
         public UsuarioTests()
         {
             Cpf = new Cpf("40914294830");
@@ -28,6 +18,14 @@ namespace TutorialEcommerce.Domain.Tests.Entities
 
             Usuario = new Usuario(Login, Cpf, Email, Senha, SenhaConfirmacao);
         }
+
+        private Cpf Cpf { get; set; }
+        private Email Email { get; set; }
+        private string Login { get; set; }
+
+        private string Senha { get; set; }
+        private string SenhaConfirmacao { get; set; }
+        private Usuario Usuario { get; set; }
 
         [TestMethod]
         [ExpectedException(typeof(Exception))]

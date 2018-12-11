@@ -83,7 +83,7 @@ namespace EcommerceJ.Helpers
             int length = stringValue.Length;
             if (length < minimum || length > maximum)
             {
-                throw new InvalidOperationException(message);
+                throw new Exception(message);
             }
         }
 
